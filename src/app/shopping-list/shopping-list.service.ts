@@ -18,4 +18,9 @@ export class ShoppingListService {
         // since we return copy of ingredients in getIngredients method, we can use this event to push to subscribers
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredients(ings: Ingredient[]) {
+        this.ingredients.push(...ings);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
 }
