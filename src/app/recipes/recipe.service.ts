@@ -15,13 +15,24 @@ export class RecipeService {
           'http://farm5.static.flickr.com/4083/5057134443_229647c320_z.jpg',
             [new Ingredient('Meat', 1),
             new Ingredient('Fench Fries', 20)]
-        )
+        ),
+        new Recipe('Jing Jiang Rose',
+        'just a test',
+         // tslint:disable-next-line:max-line-length
+         'https://fthmb.tqn.com/vDi9vViauZTEeRLidioVOlb0F5U=/960x0/filters:no_upscale()/beef-and-vegetable-stir-fry-165955462-5834b0523df78c6f6a6af185.jpg',
+           [new Ingredient('Meat', 1),
+           new Ingredient('Fench Fries', 20)]
+       )
       ];
     getRecipes() {
         return this.recipes.slice();  // call slice will make a copy of array
     }
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.slService.addIngredients(ingredients);
+    }
+
+    getRecipe(id: number) {
+        return this.recipes[id];
     }
 
 }
